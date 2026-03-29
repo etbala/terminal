@@ -217,6 +217,8 @@ namespace winrt::TerminalApp::implementation
                                                            SystemMenuItemHandler(this, &TerminalWindow::_OpenSettingsUI));
         SystemMenuChangeRequested.raise(*this, *args);
 
+        _root->PopulateSystemMenuNewTabProfiles();
+
         TraceLoggingWrite(
             g_hTerminalAppProvider,
             "WindowCreated",
